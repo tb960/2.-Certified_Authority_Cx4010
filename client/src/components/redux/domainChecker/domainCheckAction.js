@@ -1,11 +1,26 @@
-const { CHECK_DOMAIN_NAME } = require("./domainType")
+const { CHECK_DOMAIN_NAME_LOADING, CHECK_DOMAIN_NAME_SUCCESS, CHECK_DOMAIN_NAME_FAILED } = require("./domainType")
 
-const checkDomainLoading = () =>{
+
+export const checkDomainLoading = () =>{
     return {
-        type: CHECK_DOMAIN_NAME,
+        type: CHECK_DOMAIN_NAME_LOADING,
         loading: true,
-        payLoad: []
     }
 }
 
-const checkDomain
+
+export const checkDomainSuccess = (value) =>{
+    return {
+        type: CHECK_DOMAIN_NAME_SUCCESS,
+        loading: false,
+        payload: value
+    }
+}
+
+export const checkDomainFailed = (errorMsg) =>{
+    return {
+        type: CHECK_DOMAIN_NAME_FAILED,
+        loading: false,
+        payload: errorMsg
+    }
+}
