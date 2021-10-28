@@ -1,0 +1,1 @@
+export const CHECK_DOMAIN_NAME = 'CHECK_DOMAIN_NAME';
