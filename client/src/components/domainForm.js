@@ -1,11 +1,15 @@
 import React from 'react';
+import { useState } from 'react';
 
 const domainForm = () =>{
+    const [domain, setDomain] = useState("");
+
     return(
         <div>
-            <h1>The domain name checker form</h1>
+            <h1>The domain name is {domain}</h1>
 
-            <form action="/domain"></form>
+            <input type='text' value={domain} onChange={e => setDomain(e.target.value)}></input>
+            <button onClick={() => console.log(domain)}>Submit Domain for checking</button>
         </div>
     );
 }
